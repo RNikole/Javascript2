@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 1</title>
+</head>
+<body>
+    <h1>Gondoltam egy számra alkalmazás</h1>
+    
+    <label for="tipp">Adja meg tippjét 1 és 100 között!</label><br><br>
+    <input type="text" id="tipp"><br><br>
+    <button id="szam_megadva" onclick="tipp_megadva()">Tipp megadása</button>
+    <button id="uj_szam" onclick="tipp_megadva()">Új szám generálása</button>
+
+    <script type="text/javascript">
+        
+        let veletlenSzam = Math.floor(Math.random() * 100) + 1;
+        //console.log("véletlenszám eredeti: " + veletlenSzam);
+
+        function tipp_megadva()
+        {
+            if (event.srcElement.id == "uj_szam")
+                {   
+                    veletlenSzam = Math.floor(Math.random() * 100) + 1;
+                    //console.log("véletlenszám új: " + veletlenSzam);
+                }
+            else if (event.srcElement.id == "szam_megadva")
+            {
+                if (document.getElementById("tipp").value == "")
+                {
+                    alert("Nem adott meg tippet!")
+                }
+                else
+                {
+                    //console.log("véletlenszám:  " + veletlenSzam);
+                    let user_tipp = parseInt(document.getElementById("tipp").value);
+                    
+                    if (veletlenSzam < user_tipp) 
+                    {
+                        alert("A gondolt szám kisebb, mint a tipp.")
+                    } else if (veletlenSzam > user_tipp) 
+                    {
+                        alert("A gondolt szám nagyobb, mint a tipp.")
+                    } else if (veletlenSzam == user_tipp) 
+                    {
+                        alert("Gratulálok, sikeresen eltalálta a gondolt számot!")
+                    } else 
+                    {
+                        alert("Error")
+                    }    
+                }
+            }
+            
+        }
+            
+    </script>
+</body>
+</html>

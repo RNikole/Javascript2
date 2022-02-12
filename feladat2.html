@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 2</title>
+</head>
+<body>
+    <h1>Téglalap kerülete és területe</h1>
+
+    <label for="teglalap_a">Adja meg a téglalap rövidebbik oldalának hosszát!</label><br><br>
+    <input type="text" id="teglalap_a"><br><br>
+    <label for="teglalap_b">Adja meg a téglalap hosszabbik oldalának hosszát!</label><br><br>
+    <input type="text" id="teglalap_b"><br><br>
+    
+    <button onclick="szamitasok()">Számítások</button>
+
+    <p id="eredmenyek"></p>
+
+    <script type="text/javascript">
+        function szamitasok() {
+            let a = document.getElementById("teglalap_a").value;
+            let b = document.getElementById("teglalap_b").value;
+            let kerulet = 2 * a + 2 * b;
+            let terulet = a * b;
+            document.getElementById("eredmenyek").textContent = "A téglalap kerülete: " + kerulet + " A téglalap területe: " + terulet;
+        }
+    </script>
+</body>
+</html>

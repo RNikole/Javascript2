@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 3</title>
+</head>
+<body>
+    <h1>Háromszög kerülete és területe</h1>
+
+    <label for="haromszog_a">Adja meg a háromszög első oldalának a hosszát!</label><br><br>
+    <input type="text" id="haromszog_a"><br><br>
+    <label for="haromszog_b">Adja meg a háromszög második oldalának a hosszát!</label><br><br>
+    <input type="text" id="haromszog_b"><br><br>
+    <label for="haromszog_c">Adja meg a háromszög harmadik oldalának a hosszát!</label><br><br>
+    <input type="text" id="haromszog_c"><br><br>
+    
+    <button onclick="szamitasok()">Számítások</button>
+
+    <p id="eredmenyek"></p>
+
+    <script type="text/javascript">
+        function szamitasok() {
+            let a = document.getElementById("haromszog_a").value;
+            let b = document.getElementById("haromszog_b").value;
+            let c = document.getElementById("haromszog_c").value;
+            let kerulet = 1 * a + 1 * b + 1 *c;
+            let s = kerulet / 2
+            let terulet = Math.sqrt(s * (s - a) * (s - b) *(s - c));
+            document.getElementById("eredmenyek").textContent = "A háromszög kerülete: " + kerulet + " A háromszög területe: " + terulet;
+        }
+    </script>
+</body>
+</html>

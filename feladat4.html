@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 4</title>
+</head>
+<body>
+    <h1>A hét napja</h1>
+
+    <label for="szam">Adja meg, a hét hányadik napja van ma!</label><br><br>
+    <input type="text" id="szam"><br><br>
+    
+    <button onclick="het_napja()">Milyen nap van ma?</button>
+
+    <p id="eredmeny"></p>
+
+    <script type="text/javascript">
+        function het_napja() {
+            let nap = parseInt(document.getElementById("szam").value);
+            let het_napja = "";
+
+            switch (nap) 
+            {
+                case 1:
+                    het_napja = "hétfő";
+                    break;
+                case 2: 
+                    het_napja = "kedd";
+                    break;
+                case 3: 
+                    het_napja = "szerda";
+                    break;
+                case 4: 
+                    het_napja = "csütörtök";
+                    break;
+                case 5: 
+                    het_napja = "péntek";
+                    break;
+                case 6: 
+                    het_napja = "szombat";
+                    break;
+                case 7: 
+                    het_napja = "vasárnap";
+                    break;
+                default:
+                    het_napja = "x"
+                    break;
+            }
+
+            if (het_napja == "x")
+            {
+                document.getElementById("eredmeny").textContent = "Nem megfelelő számot adott meg!";
+            }
+            else
+            {
+                document.getElementById("eredmeny").textContent = "Ma " + het_napja + " van."; 
+            }
+        }
+    </script>
+</body>
+</html>

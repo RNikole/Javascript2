@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 5</title>
+</head>
+<body>
+    <h1>Köszöntés</h1>
+    
+    <button onclick="koszontes()">Köszöntés</button>
+
+    <script type="text/javascript">
+        function koszontes() {
+            let datum = new Date();
+            let ora = datum.getHours();
+
+            if (ora < 10) 
+            {
+                alert("Jó reggelt!");
+            }
+            if (ora >= 10 && ora < 18) 
+            {
+                alert("Jó napot!");
+            }
+            if (ora >= 18 && ora < 22) 
+            {
+                alert("Jó estét!");
+            }
+            if (ora >= 22) 
+            {
+                alert("Jó éjszakát!");
+            }
+        }
+    </script>
+</body>
+</html>
